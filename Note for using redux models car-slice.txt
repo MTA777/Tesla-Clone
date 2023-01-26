@@ -1,0 +1,32 @@
+import MenuIcon from '@mui/icons-material/Menu';
+
+FOR IMPORTING AN ARRAY OF CAR-MODELS FROM SECTION AND THEN DISPLAY INTO BURGER
+NAV USING REDUX OPERATIONS
+
+
+import { configureStore } from '@reduxjs/toolkit';
+import  CarReducer from"../features/car/carslice" 
+
+export const store = configureStore({
+  reducer: {
+    counter: counterReducer,
+  },
+});
+
+
+
+CAR-SLICE
+import { createSlice } from "@reduxjs/toolkit"
+
+const initialState = {
+    cars:["Model S", "Model 3", "Model X", "Model Y"]
+}
+const carSlice = createSlice({
+    name: "car" ,
+    initialState,
+    reducers: {}
+})
+
+export const selectCars = state => state.car.cars
+
+export default carSlice.reducer
